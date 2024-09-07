@@ -4,12 +4,12 @@
   >
     <div class="text-center mr-8">
       <h2>INCOME</h2>
-      <h2 class="text-green-300">$+{{ income }}</h2>
+      <h2 class="text-green-300">DZD+{{ income }}</h2>
     </div>
     <div class="h-[40px] w-[2px] mr-8 bg-gray-300"></div>
     <div class="text-center">
       <h2>EXPENSE</h2>
-      <h2 class="text-red-500">${{ expense }}</h2>
+      <h2 class="text-red-500">DZD{{ expense }}</h2>
     </div>
   </div>
 </template>

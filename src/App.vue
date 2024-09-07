@@ -3,6 +3,7 @@ import Header from "./components/Header.vue";
 import Balance from "./components/Balance.vue";
 import History from "./components/History.vue";
 import NewTrans from "./components/NewTrans.vue";
+import DownloadPdf from "./components/DownladPdf.vue";
 import { ref, computed, onMounted } from "vue";
 import { useToast } from "vue-toastification";
 
@@ -46,6 +47,7 @@ const handleSubmitted = (transactionsData) => {
     id: generateUniqueId(),
     text: transactionsData.text,
     amount: transactionsData.amount,
+    date: new Date().toLocaleString(),
   });
   savedTolocalStorage();
   toast.success("Transaction Added successfully");
@@ -76,6 +78,12 @@ const savedTolocalStorage = () => {
       <Balance :income="+income" :expense="+expense" />
       <History :transactions="transactions" @Deleted="handleDelete" />
       <NewTrans @Submitted="handleSubmitted" />
+      <DownloadPdf
+        :transactions="transactions"
+        :total="total"
+        :income="+income"
+        :expense="+expense"
+      />
     </div>
   </div>
 </template>

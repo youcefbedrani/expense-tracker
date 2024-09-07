@@ -16,7 +16,7 @@
           }"
           class="mr-2"
         >
-          ${{ transaction.amount }}
+          DZD{{ transaction.amount }}
         </h3>
         <div
           :class="{

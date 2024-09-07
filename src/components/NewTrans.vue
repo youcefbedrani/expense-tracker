@@ -42,6 +42,7 @@ const onSubmit = () => {
   const transactionsData = {
     text: text.value,
     amount: parseFloat(amount.value),
+    date: new Date().toLocaleString(),
   };
   emit("Submitted", transactionsData);
   text = "";
